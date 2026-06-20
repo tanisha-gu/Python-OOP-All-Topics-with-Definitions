@@ -1,0 +1,24 @@
+# isinstance(object, class) checks whether an object is an instance of a class or its parent class. 
+#It returns True or False and is used to verify object types safely at runtime.
+class Car:
+    def __init__(self, brand, model):
+        self.brand = brand
+        self.model = model
+
+
+class ElectricCar(Car):
+    def __init__(self, brand, model, battery_size):
+        super().__init__(brand, model)
+        self.battery_size = battery_size
+
+
+my_tesla = ElectricCar("Tesla", "Model 3", 75)
+
+# isinstance() checks
+print(isinstance(my_tesla, ElectricCar))  # True  – it IS an ElectricCar
+print(isinstance(my_tesla, Car))          # True  – ElectricCar inherits Car
+print(isinstance(my_tesla, str))          # False – not a string
+
+# type() – strict check (no inheritance)
+print(type(my_tesla) == ElectricCar)      # True
+print(type(my_tesla) == Car)              # False ← doesn't consider inheritance
