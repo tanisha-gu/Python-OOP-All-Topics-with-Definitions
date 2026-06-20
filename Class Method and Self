@@ -1,0 +1,12 @@
+#A method is a function defined inside a class. 
+#self refers to the current object calling the method — it gives access to that object's own variables and methods.
+class Car:
+    def __init__(self, brand, model):
+        self.brand = brand
+        self.model = model
+
+    def display_full_name(self):           # 'self' = current object
+        print(f"Car: {self.brand} {self.model}")
+
+car1 = Car("Honda", "Civic")
+car1.display_full_name()
