@@ -1,0 +1,22 @@
+#Encapsulation is the process of hiding internal data from outside access.
+#Private attributes are created using __ (double underscore), and getter/setter methods control how they are accessed or changed.
+
+class Car:
+    def __init__(self, brand, model):
+        self.__brand = brand     # Private attribute
+        self.model = model
+
+    def get_brand(self):         # Getter – read private data safely
+        return self.__brand
+
+    def set_brand(self, brand):  # Setter – modify private data safely
+        self.__brand = brand
+
+
+car1 = Car("BMW", "X5")
+
+# car1.__brand        AttributeError
+print(car1.get_brand())          #  BMW
+
+car1.set_brand("Audi")
+print(car1.get_brand())          #  Audi
