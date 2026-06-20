@@ -1,0 +1,23 @@
+#Definition: Inheritance allows a child class to acquire the properties and methods of a parent class.
+#It promotes code reuse — you don't rewrite what already exists.
+class Car:                                      # Parent class
+    def __init__(self, brand, model):
+        self.brand = brand
+        self.model = model
+
+    def display_full_name(self):
+        print(f"Car: {self.brand} {self.model}")
+
+
+class ElectricCar(Car):                         # Child class inherits Car
+    def __init__(self, brand, model, battery_size):
+        super().__init__(brand, model)           # Call parent constructor
+        self.battery_size = battery_size
+
+    def display_battery(self):
+        print(f"Battery: {self.battery_size} kWh")
+
+
+ev = ElectricCar("Tesla", "Model 3", 75)
+ev.display_full_name()     # Inherited from Car
+ev.display_battery()       # Own method
