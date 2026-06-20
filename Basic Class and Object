@@ -1,0 +1,11 @@
+#Definition: A class is a blueprint/template for creating objects. An object is a real instance created from that class with its own data.
+class Car:
+    def __init__(self, brand, model):
+        self.brand = brand    # instance variable
+        self.model = model    # instance variable
+
+# Creating an object (instance)
+car1 = Car("Toyota", "Camry")
+
+print(car1.brand)   # Toyota
+print(car1.model)   # Camry
