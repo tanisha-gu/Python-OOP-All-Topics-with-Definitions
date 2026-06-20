@@ -1,0 +1,22 @@
+#A static method belongs to the class but does NOT access instance (self) or class (cls) data. 
+#It is a utility function logically grouped inside a class, called using @staticmethod decorator.
+
+class Car:
+    def __init__(self, brand, model):
+        self.brand = brand
+        self.model = model
+
+    @staticmethod
+    def general_description():             # No self, no cls
+        return "Cars are motor vehicles used for transportation."
+
+    def display_full_name(self):
+        print(f"Car: {self.brand} {self.model}")
+
+
+# Call WITHOUT creating an object
+print(Car.general_description())
+
+# OR via instance
+car1 = Car("Ford", "Mustang")
+print(car1.general_description())
