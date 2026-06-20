@@ -1,0 +1,25 @@
+#Property decorators (@property, @setter) let you access methods like attributes — no parentheses needed.
+#They provide cleaner encapsulation than plain getter/setter methods.
+class Car:
+    def __init__(self, brand, model):
+        self.__brand = brand
+        self.model = model
+
+    @property
+    def brand(self):                       # Getter – access like attribute
+        return self.__brand
+
+    @brand.setter
+    def brand(self, value):                # Setter – validate before setting
+        if not value:
+            raise ValueError("Brand cannot be empty!")
+        self.__brand = value
+
+
+car1 = Car("Toyota", "Camry")
+print(car1.brand)        #  Toyota  (no parentheses!)
+
+car1.brand = "Honda"     #  Uses setter
+print(car1.brand)        # Honda
+
+# car1.brand = ""         ValueError: Brand cannot be empty!
