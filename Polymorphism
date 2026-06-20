@@ -1,0 +1,25 @@
+# Polymorphism means "many forms." The same method name behaves differently depending on which class's object calls it. 
+#Child classes override the parent's method with their own version.
+
+class Car:
+    def __init__(self, brand, model):
+        self.brand = brand
+        self.model = model
+
+    def fuel_type(self):
+        return "Petrol or Diesel"          # Default behavior
+
+
+class ElectricCar(Car):
+    def __init__(self, brand, model, battery_size):
+        super().__init__(brand, model)
+        self.battery_size = battery_size
+
+    def fuel_type(self):                   # Overridden behavior
+        return "Electric Charge"
+
+
+vehicles = [Car("Honda", "Civic"), ElectricCar("Tesla", "Model 3", 75)]
+
+for v in vehicles:
+    print(f"{v.brand} {v.model} → {v.fuel_type()}")
