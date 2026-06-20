@@ -1,0 +1,16 @@
+#A class variable is shared across all objects of a class.
+#Unlike instance variables (unique per object), a class variable holds the same value for every instance and is defined outside __init__.
+
+class Car:
+    total_cars = 0              # Class variable – shared by all
+
+    def __init__(self, brand, model):
+        self.brand = brand      # Instance variable – unique per object
+        self.model = model
+        Car.total_cars += 1     # Update shared counter
+
+car1 = Car("Toyota", "Camry")
+car2 = Car("Honda", "Civic")
+car3 = Car("Tesla", "Model 3")
+
+print(f"Total cars created: {Car.total_cars}")   # 3
