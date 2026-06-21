@@ -1,4 +1,4 @@
-#Multiple Inheritance allows a class to inherit from more than one parent class at the same time, combining features from all parents.
+# Multiple Inheritance allows a class to inherit from more than one parent class at the same time, combining features from all parents.
 
 class Car:
     def __init__(self, brand, model):
@@ -8,11 +8,9 @@ class Car:
     def fuel_type(self):
         return "Petrol or Diesel"
 
-
 class Electric:
     def charge(self):
         return "Charging with electricity "
-
 
 # HybridCar inherits from BOTH Car and Electric
 class HybridCar(Car, Electric):
@@ -20,9 +18,8 @@ class HybridCar(Car, Electric):
         super().__init__(brand, model)
         self.battery_size = battery_size
 
-    def fuel_type(self):                   # Override
+    def fuel_type(self):                   # Here we see Override
         return "Petrol + Electric (Hybrid)"
-
 
 hybrid = HybridCar("Toyota", "Prius", 50)
 
